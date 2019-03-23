@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "931719300198",
+    "firebase_url": "https://enotebook-5af6d.firebaseio.com",
+    "project_id": "enotebook-5af6d",
+    "storage_bucket": "enotebook-5af6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931719300198:android:488fc25979278f47",
+        "android_client_info": {
+          "package_name": "com.palit.harsh.com.e_notebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931719300198-ol64j8lthvmo464oph6dpsdmhp88rvt4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.palit.harsh.com.e_notebook",
+            "certificate_hash": "1e81e2276e5f331001ada29315d4ad9698e7897b"
+          }
+        },
+        {
+          "client_id": "931719300198-57qjr64pmclolhejd0l4m6q7hd8r021e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyIm3tRqY69kfBXvjH6Bc4OwBmi4CI7fg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931719300198-57qjr64pmclolhejd0l4m6q7hd8r021e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
