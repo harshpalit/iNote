@@ -1,4 +1,4 @@
-package com.palit.harsh.com.e_notebook;
+package com.palit.inote;
 
 import android.content.Context;
 import android.content.Intent;
@@ -118,7 +118,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
+        startActivity(new Intent(WelcomeActivity.this, Splash.class));
         finish();
     }
 

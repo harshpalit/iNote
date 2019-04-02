@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Employee"
+            android:text="Available 24 x 7"
             android:textColor="#fff"
             android:textSize="30dp"
             android:textStyle="bold" />
@@ -26,7 +26,7 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
-            android:text="Keep record of the employees working in your store"
+            android:text="Available on all the devices anytime anywhere"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="16dp" />

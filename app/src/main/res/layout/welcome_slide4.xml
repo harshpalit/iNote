@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Suppliers"
+            android:text="Get the Answers"
             android:textColor="#fff"
             android:textSize="30dp"
             android:textStyle="bold" />
@@ -25,7 +25,7 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
-            android:text="Manage your Suppliers and place orders for the stock"
+            android:text="Get answers of any questions just by pointing your phone's camera on the question"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="16dp" />

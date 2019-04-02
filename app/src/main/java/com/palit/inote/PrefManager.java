@@ -1,4 +1,4 @@
-package com.palit.harsh.com.e_notebook;
+package com.palit.inote;
 
 import android.content.Context;
 import android.content.SharedPreferences;

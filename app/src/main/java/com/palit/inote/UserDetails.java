@@ -1,5 +1,4 @@
-package com.palit.harsh.com.e_notebook;
-
+package com.palit.inote;
 
 public class UserDetails {
 
@@ -7,16 +6,18 @@ public class UserDetails {
     public String mPhone;
     public String mClass;
     public String mEmail;
+    public String[] mNoteBooks;
 
     public UserDetails(){
 
     }
 
-    public UserDetails(String mName,String mPhone, String mClass, String mEmail){
+    public UserDetails(String mName,String mPhone, String mClass, String mEmail, String[] noteBook){
         this.mName = mName;
         this.mClass = mClass;
         this.mEmail = mEmail;
         this.mPhone = mPhone;
+        this.mNoteBooks = noteBook;
     }
 
 
@@ -34,6 +35,10 @@ public class UserDetails {
 
     public String getmEmail(){
         return mEmail;
+    }
+
+    public String[] getmNoteBooks(){
+        return mNoteBooks;
     }
 
 }

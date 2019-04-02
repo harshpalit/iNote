@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -15,26 +15,26 @@
         android:text="Enter name for the new Notebook:"
         android:textColor="@color/colorPrimaryText"
         android:textSize="18sp"/>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginBottom="16dp">
-    <EditText
-        android:id="@+id/notebook_name"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_weight="1"
-        android:hint="Name"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+        <EditText
+            android:id="@+id/notebook_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:hint="Name"
 
-        android:padding="10dp" />
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Submit"/>
-</LinearLayout>
+            android:padding="10dp" />
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Submit"/>
+    </LinearLayout>
 
 </LinearLayout>

@@ -9,7 +9,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="48dp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,11 +44,11 @@
         android:layout_marginLeft="48dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="48dp">
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username"/>
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"/>
     </android.support.design.widget.TextInputLayout>
 
 

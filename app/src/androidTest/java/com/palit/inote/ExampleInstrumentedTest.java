@@ -1,4 +1,4 @@
-package com.palit.harsh.com.e_notebook;
+package com.palit.inote;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.palit.harsh.com.e_notebook", appContext.getPackageName());
+        assertEquals("com.palit.inote", appContext.getPackageName());
     }
 }

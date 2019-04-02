@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Transactions"
+            android:text="Share the Notes"
             android:textColor="#fff"
             android:textSize="30dp"
             android:textStyle="bold" />
@@ -26,7 +26,7 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
-            android:text="Now keep digital record of every transaction you have made just in your pocket"
+            android:text="Now sharing notes with your friends got easier with just one tap"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="16dp" />

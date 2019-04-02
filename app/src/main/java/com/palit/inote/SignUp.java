@@ -1,4 +1,4 @@
-package com.palit.harsh.com.e_notebook;
+package com.palit.inote;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -58,7 +58,7 @@ public class SignUp extends AppCompatActivity {
 
 
         mFirebaseDatabse = FirebaseDatabase.getInstance();
-        mProfileDatabaseReference = mFirebaseDatabse.getReference().child("user_profile");
+        mProfileDatabaseReference = mFirebaseDatabse.getReference();
 
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +74,7 @@ public class SignUp extends AppCompatActivity {
 
     private void signUp(){
 
+        //Get the form field values
         mName = eName.getText().toString().trim();
         mClass = classSpinner.getSelectedItem().toString();
         mPhone = ePhone.getText().toString().trim();
@@ -105,6 +106,7 @@ public class SignUp extends AppCompatActivity {
         else{
             mProgressBar.setVisibility(View.VISIBLE);
 
+            //Get the auth and create the user
             final FirebaseAuth mAuth = FirebaseAuth.getInstance();
             mAuth.createUserWithEmailAndPassword(mEmail,mPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -114,10 +116,15 @@ public class SignUp extends AppCompatActivity {
                         mProgressBar.setVisibility(View.GONE);
                         FirebaseAuth auth = FirebaseAuth.getInstance();
                         FirebaseUser user = auth.getCurrentUser();
+
                         if(user != null)
-                        muserId = user.getUid();
-                        UserDetails details = new UserDetails(mName,mPhone,mClass,mEmail);
-                        mProfileDatabaseReference.child(muserId).push().setValue(details);
+                            //Get newly created user's id
+                            muserId = user.getUid();
+
+                        //Get the user details and push it to the database
+                        UserDetails details = new UserDetails(mName,mPhone,mClass,mEmail,null);
+                        mProfileDatabaseReference.child("Users/"+muserId).setValue(details);
+                        startActivity(new Intent(getApplicationContext(),HomeScreen.class));
 
                     }
                     else{

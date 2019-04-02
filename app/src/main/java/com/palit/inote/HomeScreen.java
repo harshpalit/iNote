@@ -1,4 +1,5 @@
-package com.palit.harsh.com.e_notebook;
+package com.palit.inote;
+
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,6 +17,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,6 +39,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
@@ -74,13 +77,14 @@ public class HomeScreen extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
 
-        //Get Firebase instance and get the user details
+        //Get FireBase instance and get the user details
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
         transparentToolbar();
         setContentView(R.layout.activity_home_screen);
 
+        //Initiate the views
         mName = findViewById(R.id.name);
         mScanText = findViewById(R.id.scanned_text);
         mOcr = findViewById(R.id.ocr_scan);
@@ -114,7 +118,7 @@ public class HomeScreen extends AppCompatActivity
 
         //Get FireBase DataBase Reference
         mDataBase = FirebaseDatabase.getInstance();
-        mDataBaseReference = mDataBase.getReference().child("user_profile").child(mUser.getUid());
+        mDataBaseReference = mDataBase.getReference().child("Users").child(mUser.getUid());
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -141,9 +145,25 @@ public class HomeScreen extends AppCompatActivity
         final TextView tEmail = v.findViewById(R.id.textView);
 
 
-        mDataBaseReference.addChildEventListener(new ChildEventListener() {
+        mDataBaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.d("datsnapshot",dataSnapshot.toString());
+                userDetails = dataSnapshot.getValue(UserDetails.class);
+                tUsername.setText(userDetails.getmName());
+                mName.setText(userDetails.getmName());
+                tEmail.setText(userDetails.getmEmail());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+       /* mDataBaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Log.d("datsnapshot",dataSnapshot.toString());
                 userDetails = dataSnapshot.getValue(UserDetails.class);
                 username = userDetails.getmName();
                 email = userDetails.getmEmail();
@@ -171,7 +191,7 @@ public class HomeScreen extends AppCompatActivity
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
     }
 
     @Override
@@ -214,6 +234,7 @@ public class HomeScreen extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            startActivity(new Intent(this,MyNotebooks.class));
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -271,11 +292,11 @@ public class HomeScreen extends AppCompatActivity
                 }
                 else {
                     Snackbar snackbar = Snackbar
-                            .make(linearLayout, "Scan QrCode on back of the E-Notebook", Snackbar.LENGTH_LONG)
+                            .make(linearLayout, "Scan QrCode on back of the iNote", Snackbar.LENGTH_LONG)
                             .setAction("Scan Again", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                   Scanner();
+                                    Scanner();
                                 }
                             });
 
@@ -291,7 +312,7 @@ public class HomeScreen extends AppCompatActivity
             //get the Uri of the file
             Uri imageUri = data.getData();
             try {
-               image = FirebaseVisionImage.fromFilePath(getApplicationContext(), imageUri);
+                image = FirebaseVisionImage.fromFilePath(getApplicationContext(), imageUri);
 
             }catch (IOException e){
                 e.printStackTrace();
@@ -337,4 +358,3 @@ public class HomeScreen extends AppCompatActivity
     }
 
 }
-

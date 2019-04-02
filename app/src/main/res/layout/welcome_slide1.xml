@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Manage Stock"
+            android:text="Scan NoteBooks"
             android:textColor="#fff"
             android:textSize="30dp"
             android:textStyle="bold" />
@@ -26,7 +26,7 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
-            android:text="Managing stock of the store got easier with Managed App"
+            android:text="Simply scan the pages of the notebook and save them to drive"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="16dp" />

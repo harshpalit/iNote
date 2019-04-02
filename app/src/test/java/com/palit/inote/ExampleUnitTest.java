@@ -1,4 +1,4 @@
-package com.palit.harsh.com.e_notebook;
+package com.palit.inote;
 
 import org.junit.Test;
 
